@@ -15,10 +15,10 @@ An periodic table app made in flutter.
 The first step is to clone the repository from GitHub. You can do this using the following command in your terminal / commandline:
 
 ```
-git clone https://github.com/AvikArefin/periodictable.git
+git clone https://github.com/AvikArefin/Ptablet.git
 ```
 
-This will create a directory called `periodictable` in your current working directory.
+This will create a directory called `Ptablet` in your current working directory.
 
 **Open the project in your code editor**
 
