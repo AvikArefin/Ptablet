@@ -25,6 +25,12 @@ dev_dependencies:
 
   flutter_lints: ^2.0.0
   flutter_launcher_icons: ^0.13.1
+  msix: ^3.15.0
+
+msix_config:
+  display_name: PTablet
+  publisher_display_name: PTablet
+  msix_version: 1.0.0.0
 
 flutter_launcher_icons:
   image_path: "assets/icon/icon.png"
