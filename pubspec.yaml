@@ -2,7 +2,7 @@ name: periodictable
 description: A new Flutter project.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
+version: 1.1.0
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
@@ -30,7 +30,7 @@ dev_dependencies:
 msix_config:
   display_name: PTablet
   publisher_display_name: PTablet
-  msix_version: 1.0.0.0
+  msix_version: 1.0.0.0+1
 
 flutter_launcher_icons:
   image_path: "assets/icon/icon.png"
