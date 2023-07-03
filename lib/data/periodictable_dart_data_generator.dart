@@ -81,5 +81,6 @@ void main() {
   File dartFile = File('periodictable_data.dart');
   dartFile.writeAsStringSync(dartCode);
 
+  // ignore: avoid_print
   print('Dart file generated successfully!');
 }
