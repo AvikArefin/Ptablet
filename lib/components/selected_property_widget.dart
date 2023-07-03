@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:periodictable/controllers/periodictable_controller.dart';
+import 'package:ptablet/controllers/periodictable_controller.dart';
 
 class SelectedPropertyWidget extends StatelessWidget {
   SelectedPropertyWidget({super.key, required this.atomIndex});

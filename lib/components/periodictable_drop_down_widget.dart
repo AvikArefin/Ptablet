@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:periodictable/controllers/enum_text_func.dart';
-import 'package:periodictable/controllers/periodictable_controller.dart';
+import 'package:ptablet/controllers/enum_text_func.dart';
+import 'package:ptablet/controllers/periodictable_controller.dart';
 
 class PeriodicTableDropDownWidget extends StatelessWidget {
   const PeriodicTableDropDownWidget({

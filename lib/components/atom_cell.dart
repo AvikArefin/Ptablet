@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:periodictable/components/color_cell.dart';
-import 'package:periodictable/components/selected_property_widget.dart';
-import 'package:periodictable/controllers/periodictable_controller.dart';
-import 'package:periodictable/controllers/temperature_controller.dart';
-import 'package:periodictable/data/periodictable_data.dart';
-import 'package:periodictable/pages/atom_details_page.dart';
+import 'package:ptablet/components/color_cell.dart';
+import 'package:ptablet/components/selected_property_widget.dart';
+import 'package:ptablet/controllers/periodictable_controller.dart';
+import 'package:ptablet/controllers/temperature_controller.dart';
+import 'package:ptablet/data/periodictable_data.dart';
+import 'package:ptablet/pages/atom_details_page.dart';
 
 class AtomCell extends StatelessWidget {
   AtomCell({required this.atomIndex, super.key});

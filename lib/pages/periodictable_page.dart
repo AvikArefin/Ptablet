@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:periodictable/components/atom_cell.dart';
-import 'package:periodictable/components/number_cell.dart';
-import 'package:periodictable/components/periodictable_drop_down_widget.dart';
-import 'package:periodictable/components/temperature_widget.dart';
-import 'package:periodictable/controllers/periodictable_controller.dart';
-import 'package:periodictable/controllers/sort_controller.dart';
-import 'package:periodictable/pages/sort_page.dart';
+import 'package:ptablet/components/atom_cell.dart';
+import 'package:ptablet/components/number_cell.dart';
+import 'package:ptablet/components/periodictable_drop_down_widget.dart';
+import 'package:ptablet/components/temperature_widget.dart';
+import 'package:ptablet/controllers/periodictable_controller.dart';
+import 'package:ptablet/controllers/sort_controller.dart';
+import 'package:ptablet/pages/sort_page.dart';
 
 class PeriodicTablePage extends StatelessWidget {
   PeriodicTablePage({Key? key}) : super(key: key);

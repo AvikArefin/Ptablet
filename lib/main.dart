@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:periodictable/pages/periodictable_page.dart';
+import 'package:ptablet/pages/periodictable_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

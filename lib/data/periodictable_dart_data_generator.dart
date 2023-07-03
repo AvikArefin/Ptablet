@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:periodictable/models/atom_model.dart';
+import 'package:ptablet/models/atom_model.dart';
 
 void main() {
   // Read JSON file

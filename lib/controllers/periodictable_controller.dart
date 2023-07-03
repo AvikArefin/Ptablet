@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:periodictable/controllers/list_index_func.dart';
-import 'package:periodictable/controllers/temperature_controller.dart';
-import 'package:periodictable/data/periodictable_data.dart';
+import 'package:ptablet/controllers/list_index_func.dart';
+import 'package:ptablet/controllers/temperature_controller.dart';
+import 'package:ptablet/data/periodictable_data.dart';
 
 enum Property {
   atomicMass,

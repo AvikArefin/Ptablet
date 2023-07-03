@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:periodictable/components/atom_element_image_widget.dart';
-import 'package:periodictable/constants/constants.dart';
-import 'package:periodictable/controllers/enum_text_func.dart';
-import 'package:periodictable/controllers/list_index_func.dart';
-import 'package:periodictable/data/cas.dart';
-import 'package:periodictable/data/periodictable_data.dart';
-import 'package:periodictable/models/atom_model.dart';
-import 'package:periodictable/pages/atom_orbits_page.dart';
+import 'package:ptablet/components/atom_element_image_widget.dart';
+import 'package:ptablet/constants/constants.dart';
+import 'package:ptablet/controllers/enum_text_func.dart';
+import 'package:ptablet/controllers/list_index_func.dart';
+import 'package:ptablet/data/cas.dart';
+import 'package:ptablet/data/periodictable_data.dart';
+import 'package:ptablet/models/atom_model.dart';
+import 'package:ptablet/pages/atom_orbits_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AtomDetailsPage extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:periodictable/controllers/periodictable_controller.dart';
-import 'package:periodictable/controllers/temperature_controller.dart';
+import 'package:ptablet/controllers/periodictable_controller.dart';
+import 'package:ptablet/controllers/temperature_controller.dart';
 
 class ColorCell extends StatelessWidget {
   ColorCell({

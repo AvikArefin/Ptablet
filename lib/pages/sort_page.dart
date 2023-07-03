@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:periodictable/controllers/enum_text_func.dart';
-import 'package:periodictable/controllers/sort_controller.dart';
+import 'package:ptablet/controllers/enum_text_func.dart';
+import 'package:ptablet/controllers/sort_controller.dart';
 
 class SortPage extends StatelessWidget {
   SortPage({super.key});

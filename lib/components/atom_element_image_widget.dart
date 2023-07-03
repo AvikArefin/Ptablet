@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:network_to_file_image/network_to_file_image.dart';
-import 'package:periodictable/constants/constants.dart';
-import 'package:periodictable/controllers/file_from_app_support_dir_func.dart';
-import 'package:periodictable/models/atom_model.dart';
+import 'package:ptablet/constants/constants.dart';
+import 'package:ptablet/controllers/file_from_app_support_dir_func.dart';
+import 'package:ptablet/models/atom_model.dart';
 
 class AtomElementImageWidget extends StatelessWidget {
   const AtomElementImageWidget({super.key, required this.atom});
