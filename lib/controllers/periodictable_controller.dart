@@ -74,17 +74,17 @@ class PeriodicTableController extends GetxController {
 
   ({int r, int g, int b}) getColor(int atomIndex, double currentTemperature) {
     if (atoms[atomIndex].boil == null || atoms[atomIndex].melt == null) {
-      return (r: 70, g: 70, b: 70);
+      return (r: 0, g: 0, b: 0);
     } else {
       double boilingPoint = atoms[atomIndex].boil!;
       double meltingPoint = atoms[atomIndex].melt!;
       if (currentTemperature > boilingPoint) {
-        return (r: 200, g: 10, b: 10);
+        return (r: 150, g: 0, b: 0);
       } else if (currentTemperature <= boilingPoint &&
           currentTemperature > meltingPoint) {
-        return (r: 10, g: 200, b: 10);
+        return (r: 0, g: 150, b: 0);
       } else {
-        return (r: 10, g: 10, b: 200);
+        return (r: 0, g: 0, b: 150);
       }
     }
   }
