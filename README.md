@@ -1,4 +1,4 @@
-# periodictable
+# Ptablet
 
 An periodic table app made in flutter.
 
