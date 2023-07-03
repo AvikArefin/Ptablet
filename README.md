@@ -2,6 +2,8 @@
 
 An periodic table app made in flutter.
 
+![Showcase app front page]([image.png](https://github.com/AvikArefin/Ptablet/blob/main/showcase.bmp))
+
 ## Getting Started
 
 **Prerequisites**
