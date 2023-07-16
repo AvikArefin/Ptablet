@@ -35,13 +35,64 @@ class TemperatureWidget extends StatelessWidget {
                                 value.roundToDouble();
                           },
                         )),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 4.0, vertical: 16.0),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0, vertical: 4.0),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context)
+                                .primaryColor
+                                .withOpacity(0.12),
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          alignment: Alignment.center,
+                          child: Obx(() => Text(
+                              '${(controller.currentKTemperature).toStringAsFixed(2)} K')),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 4.0, vertical: 16.0),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0, vertical: 4.0),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context)
+                                .primaryColor
+                                .withOpacity(0.12),
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          alignment: Alignment.center,
+                          child: Obx(() => Text(
+                              '${(controller.currentCTemperature).toStringAsFixed(2)} C')),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 4.0, vertical: 16.0),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0, vertical: 4.0),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context)
+                                .primaryColor
+                                .withOpacity(0.12),
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          alignment: Alignment.center,
+                          child: Obx(() => Text(
+                              '${(controller.currentFTemperature).toStringAsFixed(2)} F')),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               );
             },
           );
         },
-        child: Obx(() => Text(controller.currentKTemperature.toString())),
+        child:
+            Obx(() => Text('${controller.currentKTemperature.toString()} K')),
       ),
     );
   }
