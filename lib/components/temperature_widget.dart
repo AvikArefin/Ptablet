@@ -23,6 +23,23 @@ class TemperatureWidget extends StatelessWidget {
                 ),
                 content: Wrap(
                   children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ColoredBox(
+                            color: Color.fromRGBO(150, 0, 0, 1),
+                            child: SizedBox(width: 20, height: 20)),
+                        Text('  Gas  '),
+                        ColoredBox(
+                            color: Color.fromRGBO(0, 150, 0, 1),
+                            child: SizedBox(width: 20, height: 20)),
+                        Text('  Liquid  '),
+                        ColoredBox(
+                            color: Color.fromRGBO(0, 0, 150, 1),
+                            child: SizedBox(width: 20, height: 20)),
+                        Text('  Solid  '),
+                      ],
+                    ),
                     Obx(() => Slider(
                           value: controller.currentKTemperature,
                           min: 0.0,
