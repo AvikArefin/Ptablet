@@ -1,8 +1,8 @@
 # Ptablet
 
 An periodic table app made in flutter.
+
 ![Image](showcase.bmp)
-![Showcase app front page]([showcase.bmp](https://github.com/AvikArefin/Ptablet/blob/main/showcase.bmp))
 
 ## Getting Started
 
