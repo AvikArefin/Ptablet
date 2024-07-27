@@ -9,7 +9,7 @@ import 'package:ptablet/controllers/sort_controller.dart';
 import 'package:ptablet/pages/sort_page.dart';
 
 class PeriodicTablePage extends StatelessWidget {
-  PeriodicTablePage({Key? key}) : super(key: key);
+  PeriodicTablePage({super.key});
   final PeriodicTableController periodicTableController =
       Get.put(PeriodicTableController());
   final SortController sortController = Get.put(SortController());

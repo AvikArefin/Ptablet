@@ -6,11 +6,11 @@ class NumberCell extends StatelessWidget {
   final double height;
 
   const NumberCell({
-    Key? key,
+    super.key,
     required this.value,
     this.width = 20,
     this.height = 20,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

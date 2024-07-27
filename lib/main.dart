@@ -8,7 +8,7 @@ Future<void> main() async {
 }
 
 class PeriodicTableApp extends StatelessWidget {
-  const PeriodicTableApp({Key? key}) : super(key: key);
+  const PeriodicTableApp({super.key});
 
   @override
   Widget build(BuildContext context) {
