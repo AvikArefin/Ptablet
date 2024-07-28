@@ -1,7 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ptablet/controllers/list_index_func.dart';
-import 'package:ptablet/controllers/temperature_controller.dart';
-import 'package:ptablet/data/periodictable_data.dart';
+
+import '../data/periodictable_data.dart';
+import '../models/atom_model.dart';
+import 'list_index_func.dart';
+import 'temperature_controller.dart';
 
 enum Property {
   atomicMass,
@@ -25,6 +28,7 @@ class PeriodicTableController extends GetxController {
       <({int column, int row}), int>{};
   static const _numberOfElements = 119;
 
+  final _atomCategory = AtomCategory.values.first.obs;
   final _property = Property.atomicMass.obs;
 
   @override
@@ -38,14 +42,16 @@ class PeriodicTableController extends GetxController {
     }
   }
 
+  set atomCategory(AtomCategory atomCategory) =>
+      _atomCategory.value = atomCategory;
+
   set property(Property property) => _property.value = property;
 
   Property get property => _property.value;
 
   String get propertyString => _property.value.name;
 
-  String getSelectedProperty(int atomIndex) {
-    final atom = atoms[atomIndex];
+  String getSelectedProperty(Atom atom) {
     switch (_property.value) {
       case Property.atomicMass:
         return atom.atomicMass == null
@@ -72,19 +78,24 @@ class PeriodicTableController extends GetxController {
     }
   }
 
-  ({int r, int g, int b}) getColor(int atomIndex, double currentTemperature) {
-    if (atoms[atomIndex].boil == null || atoms[atomIndex].melt == null) {
-      return (r: 50, g: 50, b: 50);
+  Color getColor(Atom atom, double currentTemperature) {
+    if (_atomCategory.value != AtomCategory.all) {
+      if (atom.category != _atomCategory.value) {
+        return Colors.transparent;
+      }
+    }
+    if (atom.boil == null || atom.melt == null) {
+      return const Color.fromRGBO(50, 50, 50, 1.0);
     } else {
-      double boilingPoint = atoms[atomIndex].boil!;
-      double meltingPoint = atoms[atomIndex].melt!;
+      double boilingPoint = atom.boil!;
+      double meltingPoint = atom.melt!;
       if (currentTemperature > boilingPoint) {
-        return (r: 150, g: 0, b: 0);
+        return const Color.fromRGBO(150, 0, 0, 1.0);
       } else if (currentTemperature <= boilingPoint &&
           currentTemperature > meltingPoint) {
-        return (r: 0, g: 150, b: 0);
+        return const Color.fromRGBO(0, 150, 0, 1.0);
       } else {
-        return (r: 0, g: 0, b: 150);
+        return const Color.fromRGBO(0, 0, 150, 1.0);
       }
     }
   }
