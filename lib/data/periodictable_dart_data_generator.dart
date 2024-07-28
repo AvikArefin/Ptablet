@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:ptablet/models/atom_model.dart';
+import '../models/atom_model.dart';
+
 
 void main() {
   // Read JSON file

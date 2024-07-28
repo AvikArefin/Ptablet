@@ -18,6 +18,7 @@ class NumberCell extends StatelessWidget {
       width: width,
       height: height,
       child: Text(
+        textAlign: TextAlign.center,
         '$value',
       ),
     );

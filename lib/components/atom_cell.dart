@@ -1,63 +1,85 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ptablet/components/color_cell.dart';
-import 'package:ptablet/components/selected_property_widget.dart';
-import 'package:ptablet/controllers/periodictable_controller.dart';
-import 'package:ptablet/controllers/temperature_controller.dart';
-import 'package:ptablet/data/periodictable_data.dart';
-import 'package:ptablet/pages/atom_details_page.dart';
+
+import '../controllers/periodictable_controller.dart';
+import '../controllers/temperature_controller.dart';
+import '../models/atom_model.dart';
+import '../pages/atom_details_page.dart';
 
 class AtomCell extends StatelessWidget {
-  AtomCell({required this.atomIndex, super.key});
-  final int atomIndex;
+  AtomCell({required this.atom, super.key});
+  final Atom atom;
   final PeriodicTableController periodicTableController = Get.find();
   final TemperatureController temperatureController =
       Get.put(TemperatureController());
 
   @override
   Widget build(BuildContext context) {
-    final atom = atoms[atomIndex];
     return InkWell(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AtomDetailsPage(atomIndex: atomIndex),
+            builder: (context) => AtomDetailsPage(atom: atom),
           ),
         );
       },
       child: Stack(
         children: [
-          ColorCell(atomIndex: atomIndex),
-          SizedBox(
-            height: 80,
-            width: 80,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(atom.number.toString()),
-                Text(
-                  atom.symbol,
-                  style: const TextStyle(
-                      fontSize: 32, height: 0.95, fontWeight: FontWeight.bold),
+          Obx(
+            () {
+              /// This is the ColorCell
+              final color = periodicTableController.getColor(
+                  atom, temperatureController.currentKTemperature);
+              late final Color textColor;
+              if (color == Colors.transparent) {
+                textColor = Colors.transparent;
+              } else {
+                textColor = Colors.white;
+              }
+              return Container(
+                color: color,
+                padding: const EdgeInsets.only(left: 2.0),
+                height: 80,
+                width: 80,
+                child: Column(
+                  children: [
+                    /// This is the NumberCell
+                    Text(atom.number.toString(),
+                        style: TextStyle(color: textColor)),
+                    Text(
+                      atom.symbol,
+                      style: TextStyle(
+                          color: textColor,
+                          fontSize: 32,
+                          height: 0.95,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      atom.name,
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.jost(
+                          color: textColor,
+                          height: 0.9,
+                          fontWeight: FontWeight.w300,
+                          fontSize: 13,
+                          wordSpacing: 5),
+                    ),
+
+                    /// This is the SelectedPropertyWidget
+                    Text(
+                      periodicTableController.getSelectedProperty(atom),
+                      style: TextStyle(
+                          color: textColor, height: 0.9, fontSize: 10),
+                    ),
+                  ],
                 ),
-                Text(
-                  atom.name,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.jost(
-                      height: 0.9,
-                      fontWeight: FontWeight.w300,
-                      fontSize: 13,
-                      wordSpacing: 5),
-                ),
-                SelectedPropertyWidget(atomIndex: atomIndex),
-              ],
-            ),
+              );
+            },
           ),
         ],
       ),
     );
   }
 }
-

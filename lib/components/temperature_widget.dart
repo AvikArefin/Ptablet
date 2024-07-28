@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ptablet/controllers/temperature_controller.dart';
+
+import '../controllers/temperature_controller.dart';
 
 class TemperatureWidget extends StatelessWidget {
   TemperatureWidget({super.key});
@@ -23,30 +24,13 @@ class TemperatureWidget extends StatelessWidget {
                 ),
                 content: Wrap(
                   children: [
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ColoredBox(
-                            color: Color.fromRGBO(150, 0, 0, 1),
-                            child: SizedBox(width: 20, height: 20)),
-                        Text('  Gas  '),
-                        ColoredBox(
-                            color: Color.fromRGBO(0, 150, 0, 1),
-                            child: SizedBox(width: 20, height: 20)),
-                        Text('  Liquid  '),
-                        ColoredBox(
-                            color: Color.fromRGBO(0, 0, 150, 1),
-                            child: SizedBox(width: 20, height: 20)),
-                        Text('  Solid  '),
-                      ],
-                    ),
                     Obx(() => Slider(
                           value: controller.currentKTemperature,
                           min: 0.0,
-                          max: 5000.0,
+                          max: 7000.0,
                           divisions: 100,
                           label:
-                              controller.currentKTemperature.round().toString(),
+                              "${controller.currentKTemperature.round()}K",
                           onChanged: (double value) {
                             controller.currentKTemperature =
                                 value.roundToDouble();
@@ -57,21 +41,6 @@ class TemperatureWidget extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 4.0, vertical: 16.0),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 16.0, vertical: 4.0),
-                            decoration: BoxDecoration(
-                              color: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.12),
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            alignment: Alignment.center,
-                            child: Obx(() => Text(
-                                '${(controller.currentKTemperature).toStringAsFixed(1)}K')),
-                          ),
                           Container(
                             margin: const EdgeInsets.symmetric(
                                 horizontal: 4.0, vertical: 16.0),
