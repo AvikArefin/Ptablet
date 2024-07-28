@@ -1,4 +1,5 @@
 enum AtomCategory {
+  all,
   diatomicNonmetal,
   nobleGas,
   alkaliMetal,
@@ -45,7 +46,7 @@ class Atom {
   final ImageInfo? image;
   // final String block;
 
-  Atom({
+  const Atom({
     required this.name,
     required this.appearance,
     this.atomicMass,
