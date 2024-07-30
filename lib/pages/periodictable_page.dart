@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ptablet/controllers/temperature_controller.dart';
 
-import '../components/atom_group_menu.dart';
 import '../components/black_box.dart';
-import '../components/periodictable_drop_down.dart';
+import '../components/options_sheet.dart';
 import '../components/temperature_widget.dart';
+import 'about_page.dart';
 import 'sort_page.dart';
 
 class PeriodicTablePage extends StatelessWidget {
@@ -13,11 +15,33 @@ class PeriodicTablePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PTablet'),
+        title: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AboutPage(),
+                ),
+              );
+            },
+            child: const Text('PTablet')),
         actions: [
-          TemperatureWidget(),
-          PropertyDropDown(),
-          AtomGroupMenu(),
+          GetX<TemperatureController>(
+            builder: (controller) {
+              return Text(
+                'T = ${controller.currentKTemperature.toStringAsFixed(1)}K',
+              );
+            },
+          ),
+          Tooltip(
+            message: "Options",
+            child: IconButton(
+                onPressed: () => showModalBottomSheet<void>(
+                    context: context,
+                    builder: (BuildContext context) => const OptionsSheet()),
+                constraints: const BoxConstraints(minWidth: 26, minHeight: 26),
+                icon: const Icon(Icons.menu)),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -55,6 +79,10 @@ class PeriodicTablePage extends StatelessWidget {
                       color: Color.fromRGBO(0, 0, 150, 1),
                       child: SizedBox(width: 20, height: 20)),
                   Text('  Solid  '),
+                  ColoredBox(
+                      color: Color.fromRGBO(50, 50, 50, 1.0),
+                      child: SizedBox(width: 20, height: 20)),
+                  Text('  Unknown  '),
                 ],
               ),
             ),

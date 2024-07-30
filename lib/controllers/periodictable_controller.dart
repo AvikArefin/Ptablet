@@ -47,6 +47,8 @@ class PeriodicTableController extends GetxController {
 
   set property(Property property) => _property.value = property;
 
+  AtomCategory get atomCategory => _atomCategory.value;
+
   Property get property => _property.value;
 
   String get propertyString => _property.value.name;
