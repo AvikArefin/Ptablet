@@ -105,7 +105,7 @@ class Atom {
       case 'metalloid':
         category = AtomCategory.metalloid;
       default:
-        category = AtomCategory.nobleGas;
+        category = AtomCategory.all;
     }
     return Atom(
       name: json['name'],

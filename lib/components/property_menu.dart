@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ptablet/controllers/enum_text_func.dart';
-import 'package:ptablet/models/atom_model.dart';
 
+import '../controllers/enum_text_func.dart';
 import '../controllers/periodictable_controller.dart';
 
-class AtomGroupMenu extends StatelessWidget {
-  AtomGroupMenu({super.key});
-
+class PropertyMenu extends StatelessWidget {
+  PropertyMenu({super.key});
   final PeriodicTableController periodicTableController =
       Get.put(PeriodicTableController());
 
@@ -15,7 +13,7 @@ class AtomGroupMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text('Currently Shown Groups: '),
+        const Text('Currently Shown Property: '),
         const Spacer(),
         PopupMenuButton(
           child: Container(
@@ -25,20 +23,20 @@ class AtomGroupMenu extends StatelessWidget {
               children: [
                 Obx(
                   () => Text(
-                    capitalizeAndAddSpaces(periodicTableController.atomCategory.name),
+                    capitalizeAndAddSpaces(periodicTableController.property.name),
                   ),
                 ),
                 const Icon(Icons.arrow_drop_down),
               ],
             ),
           ),
-          onSelected: (selectedCategory) =>
-              periodicTableController.atomCategory = selectedCategory,
+          onSelected: (selectedProperty) =>
+              periodicTableController.property = selectedProperty,
           itemBuilder: (context) => [
-            for (final category in AtomCategory.values)
+            for (final property in Property.values)
               PopupMenuItem(
-                value: category,
-                child: Text(capitalizeAndAddSpaces(category.name)),
+                value: property,
+                child: Text(capitalizeAndAddSpaces(property.name)),
               ),
           ],
         ),
